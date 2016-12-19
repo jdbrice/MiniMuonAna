@@ -35,3 +35,4 @@
 *.root
 *.lis
 *color_SConscript
+*.pdf

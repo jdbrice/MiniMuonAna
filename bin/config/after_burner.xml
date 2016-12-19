@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+	<Task name="flm" type="MiniMuonAfterBurner" config="" nodePath="MiniAna" />
+	<Logger color="true" globalLogLevel="all" />
+	
+
+	<mod>_All</mod>
+	<MiniAna>
+		<Logger color="true" globalLogLevel="info" />
+		<EventLoop progress="true" />
+	
+		<input>
+			<TFile url="MiniAna{mod}.root" />
+		</input>
+
+		<output>
+			<TFile url="AfterBurn{mod}.root" />
+		</output>
+
+		<histograms>
+
+			
+		</histograms>
+
+		
+
+	</MiniAna>
+
+</config>

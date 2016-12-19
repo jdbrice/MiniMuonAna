@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<Task name="flm" type="VegaXmlPlotter" config="" nodePath="" />
+	<Logger color="true" globalLogLevel="all" />
+
+	<Data name="d" url="MiniAna_All.root" />	
+
+	<Plot>
+		<Palette>87</Palette>
+		<Histo data="d" name="mc_uls_mass" style="styles.m1d">
+			<style draw="" linewidth="2" linecolor="600" />
+			<RebinX>3</RebinX>
+		</Histo>
+		<Histo data="d" name="mc_uls_mass_0p5" style="styles.m1d">
+			<style draw="same" linewidth="2" linecolor="601" />
+			<RebinX>3</RebinX>
+		</Histo>
+		<Histo data="d" name="mc_uls_mass_0p6" style="styles.m1d">
+			<style draw="same" linewidth="2" linecolor="602" />
+			<RebinX>3</RebinX>
+		</Histo>
+		<Histo data="d" name="mc_uls_mass_0p7" style="styles.m1d">
+			<style draw="same" linewidth="2" linecolor="603" />
+			<RebinX>3</RebinX>
+		</Histo>
+		<Histo data="d" name="mc_uls_mass_0p8" style="styles.m1d">
+			<style draw="same" linewidth="2" linecolor="604" />
+			<RebinX>3</RebinX>
+		</Histo>
+		<Histo data="d" name="mc_uls_mass_0p9" style="styles.m1d">
+			<style draw="same" linewidth="2" linecolor="599" />
+			<RebinX>3</RebinX>
+		</Histo>
+		<Histo data="d" name="mc_uls_mass_1p0" style="styles.m1d">
+			<style draw="same" linewidth="2" linecolor="598" />
+			<RebinX>3</RebinX>
+		</Histo>
+
+		<Legend title="From top to bottom">
+			<Position x1="0.7" x2="0.9" y1="0.6" y2="0.9" />
+			<Entry name="mc_uls_mass" title="pT > 0.2 GeV/c" />
+			<Entry name="mc_uls_mass_0p5" title="pT > 0.5 GeV/c" />
+			<Entry name="mc_uls_mass_0p6" title="pT > 0.6 GeV/c" />
+			<Entry name="mc_uls_mass_0p7" title="pT > 0.7 GeV/c" />
+			<Entry name="mc_uls_mass_0p8" title="pT > 0.8 GeV/c" />
+			<Entry name="mc_uls_mass_0p9" title="pT > 0.9 GeV/c" />
+			<Entry name="mc_uls_mass_1p0" title="pT > 1.0 GeV/c" />
+		</Legend>
+
+		<Export url="../export/pdf/mc_inv_mass_vs_pt_cut.pdf" />
+	</PlotTemplate>
+
+	<styles>
+		<m1d title="Muon MC(+-) from All Parents" x="M_{#mu #mu} [GeV/c^{2}]" y="dN/dM [c^{2}/GeV]" logy="1" optstat="0"/>
+	</styles>
+
+</config>

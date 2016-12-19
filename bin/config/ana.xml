@@ -5,7 +5,7 @@
 	<Logger color="true" globalLogLevel="all" />
 	
 
-	<mod>_Pion</mod>
+	<mod>_All_pT_gt_0p8</mod>
 	<MiniAna>
 		<Logger color="true" globalLogLevel="info" />
 		<EventLoop progress="true" />
@@ -20,9 +20,10 @@
 		</output>
 
 		<McTrackCuts>
-			<Range name="pT" min="0.2" max="1000" />
+			<Range name="pT" min="0.8" max="1000" />
+			<Range name="lpT" min="0.8" max="1000" />
 			<Range name="eta" min="-1.8" max="1.8" />
-			<Range name="parentGeantId" min="8" max="9" />
+			<Range name="parentGeantId" min="0" max="900" />
 		</McTrackCuts>
 
 		<histograms>

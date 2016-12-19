@@ -557,6 +557,7 @@ namespace {
 0
     };
     static const char* includePaths[] = {
+"/Users/danielbrandenburg/bnl/local/work/MiniMuonAna/include/MiniMuonAfterBurner.h",
 "/Users/danielbrandenburg/bnl/local/work/MiniMuonAna/include/StMiniLib",
 "/Users/danielbrandenburg/bnl/local/work/MiniMuonAna/include/StMiniLib_Linkdef.h",
 "/Users/danielbrandenburg/bnl/local/work/MiniMuonAna/include/StMiniMcAnalyzer.h",

@@ -117,10 +117,16 @@ protected:
 		return true;
 	}
 
+	virtual bool keepMcPair( StTinyMcTrack* _trackA, StTinyMcTrack* _trackB ){
+		if ( _trackA->key() == _trackB->key() ) return false;
+		if ( _trackA->ptMc() < mcTrackCuts["lpT"]->min && _trackB->ptMc() < mcTrackCuts["lpT"]->min ) return false;
+		return true;
+	}
+
 
 	virtual void analyzeMcPair( StTinyMcTrack* _trackA, StTinyMcTrack* _trackB ){
 		
-		if ( _trackA->key() == _trackB->key() ) return;
+		if ( !keepMcPair( _trackA, _trackB ) ) return;
 		int gIdA = _trackA->geantId();
 		int pgIdA = _trackA->parentGeantId();
 		int gIdB = _trackB->geantId();
