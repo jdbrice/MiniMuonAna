@@ -26,6 +26,7 @@ public:
 		mcTrackCuts.init( config, nodePath + ".McTrackCuts" );
 		mcTrackCuts.setDefault( "pT", 0.0, 1000 );
 		mcTrackCuts.setDefault( "eta", -10.0, 10.0 );
+		mcTrackCuts.setDefault( "parentGeantId", -1, 100000 );
 
 		mcTrackCuts.report();
 
@@ -109,6 +110,10 @@ protected:
 
 		if ( !mcTrackCuts["eta"]->inInclusiveRange( _track->etaMc() ) )
 			return false;
+
+		if ( !mcTrackCuts["parentGeantId"]->inInclusiveRange( _track->parentGeantId() ) )
+			return false;
+
 		return true;
 	}
 
@@ -129,6 +134,21 @@ protected:
 		if ( (gIdA == 5 && gIdB == 6) || (gIdA == 6 && gIdB == 5) ){
 			book->fill( "mc_uls_mass", lv.M() );
 			book->fill( "mc_uls_mass_vs_pt", lv.M(), lv.Pt() );
+
+			if ( _trackA->ptMc() > 0.5 && _trackB->ptMc() > 0.5 )
+				book->fill( "mc_uls_mass_0p5", lv.M() );
+			if ( _trackA->ptMc() > 0.6 && _trackB->ptMc() > 0.6 )
+				book->fill( "mc_uls_mass_0p6", lv.M() );
+			if ( _trackA->ptMc() > 0.7 && _trackB->ptMc() > 0.7 )
+				book->fill( "mc_uls_mass_0p7", lv.M() );
+			if ( _trackA->ptMc() > 0.8 && _trackB->ptMc() > 0.8 )
+				book->fill( "mc_uls_mass_0p8", lv.M() );
+			if ( _trackA->ptMc() > 0.9 && _trackB->ptMc() > 0.9 )
+				book->fill( "mc_uls_mass_0p9", lv.M() );
+			if ( _trackA->ptMc() > 1.0 && _trackB->ptMc() > 1.0 )
+				book->fill( "mc_uls_mass_1p0", lv.M() );
+
+
 
 			if ( _trackA->parentKey() == _trackB->parentKey() ){
 				book->fill( "mc_signal_uls_mass", lv.M() );

@@ -4,6 +4,8 @@
 	<Task name="flm" type="StMiniMcAnalyzer" config="" nodePath="MiniAna" />
 	<Logger color="true" globalLogLevel="all" />
 	
+
+	<mod>_Pion</mod>
 	<MiniAna>
 		<Logger color="true" globalLogLevel="info" />
 		<EventLoop progress="true" />
@@ -13,12 +15,14 @@
 		</input>
 
 		<output>
-			<TFile url="MiniAna.root" />
+			<TFile url="MiniAna{mod}.root" />
+
 		</output>
 
 		<McTrackCuts>
 			<Range name="pT" min="0.2" max="1000" />
 			<Range name="eta" min="-1.8" max="1.8" />
+			<Range name="parentGeantId" min="8" max="9" />
 		</McTrackCuts>
 
 		<histograms>
@@ -53,6 +57,13 @@
 			<Histo name="mc_signal_uls_mass" title="MC (+-); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
 			<Histo name="mc_signal_ls_mass" title="MC (++)+(--); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
 			<Histo name="mc_uls_mass" title="MC (+-); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
+			<Histo name="mc_uls_mass_0p5" title="MC (+-); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
+			<Histo name="mc_uls_mass_0p6" title="MC (+-); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
+			<Histo name="mc_uls_mass_0p7" title="MC (+-); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
+			<Histo name="mc_uls_mass_0p8" title="MC (+-); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
+			<Histo name="mc_uls_mass_0p9" title="MC (+-); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
+			<Histo name="mc_uls_mass_1p0" title="MC (+-); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
+
 			<Histo name="mc_ls_mass" title="MC (++)+(--); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
 			<Histo name="mc_ls_pos_mass" title="MC (++); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
 			<Histo name="mc_ls_neg_mass" title="MC (--); M_{#mu #mu}; dN/dM" bins_x="bins.m"/>
